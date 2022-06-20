@@ -92,6 +92,8 @@ public class GameManager : MonoBehaviour
         }
 
         tapsRemaining = shotsPerRound; //give the player set number of tries per round
+
+        if(currentLevel > 0) Analytics.instance.LevelStart();
     }
 
     private void Update()

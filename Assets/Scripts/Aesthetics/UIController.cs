@@ -77,6 +77,7 @@ public class UIController : MonoBehaviour
 
     public void StartOver()
     {
+        Analytics.instance.LevelStart();
         GameManager.currentLevel = 1; //start a new run from level 1
         GameManager.score = 0; //reset the score
         GameManager.gameActive = true; //un-pause the game(since it is paused on start)
@@ -86,6 +87,7 @@ public class UIController : MonoBehaviour
 
     public void StartGame()
     {
+        Analytics.instance.LevelStart();
         GameManager.gameActive = true; //change the game state
         GameManager.instance.movementAllowed = true; //allow movement of boxes
         startPanel.SetActive(false); //hide the start panel

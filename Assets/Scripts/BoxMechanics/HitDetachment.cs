@@ -15,6 +15,8 @@ public class HitDetachment : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Wall") && GameManager.gameActive) //when a box collides with a wall
         {
+            Analytics.instance.LevelFail();
+
             Instantiate(ParticleManager.instance.failParticle, transform.position, transform.rotation); //spawn a particle
 
             SoundManager.instance.gameAudio.PlayOneShot(SoundManager.instance.failBam, 0.5f); //play the tap sound

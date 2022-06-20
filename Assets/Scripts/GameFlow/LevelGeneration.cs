@@ -155,6 +155,8 @@ public class LevelGeneration : MonoBehaviour
 
     IEnumerator LevelWinSystem(GameObject panel, float delay)
     {
+        Analytics.instance.LevelWin();
+
         Instantiate(ParticleManager.instance.obstacleParticle, transform.position - particleOffset, transform.rotation); //spawn a particle
 
         GameManager.gameActive = false; //change the game state
